@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mortgage Calculator</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+<body>
+<div id="app" class="container">
+  <h1>Savings Calculator</h1>
+  <select v-model="selectedConfiguration.fund" v-on:change="calculate()">
+    <option v-for="product in products" v-bind:value="product">{{ product.name }}</option>
+  </select>
+  <input type="number"
+         placeholder=""
+         v-model="selectedConfiguration.oneTimeInvestment"
+         step="1000"
+         id="oneTimeInvestmentInput"
+         v-on:change="calculate()">
+  <input type="number"
+         placeholder=""
+         v-model="selectedConfiguration.years"
+         step="1"
+         id="yearsInput"
+         v-on:change="calculate()">
+  <div id="result">
+    <p>{{selectedConfiguration.result.total}}</p>
+    <p>{{selectedConfiguration.fund.risk}}</p>
+  </div>
+  <button v-on:click="applyForSaving()">Apply for saving</button>
+  <ul>
+    <li v-for="appliedSaving in appliedSavings">{{appliedSaving.result}}</li>
+  </ul>
+</div>
+
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+<script src="index.js">
+
+</script>
+
+</html>

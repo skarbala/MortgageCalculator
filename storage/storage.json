@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "name": "Handelsbanken Aktiv 100",
+    "risk": "High",
+    "interestRate": 5
+  },
+  {
+    "id": 2,
+    "name": "Hoggwart's Fund",
+    "risk": "Medium",
+    "interestRate": 3
+  },
+  {
+    "id": 2,
+    "name": "Fellowship investment group",
+    "risk": "Very High",
+    "interestRate": 15
+  },
+  {
+    "id": 4,
+    "name": "McDuck's safe",
+    "risk": "Very Low",
+    "interestRate": 0
+  }
+]
+
