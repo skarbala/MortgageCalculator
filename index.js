@@ -16,10 +16,21 @@ const app = new Vue({
             interestIncome: '',
             taxes: '',
             years: '',
-            email:''
+            email: ''
         },
+        calculated: false,
         appliedSavings: [],
 
+    },
+    computed: {
+        savingButtonDisabled: function () {
+            return !(
+                this.selectedConfiguration.fund &&
+                this.selectedConfiguration.oneTimeInvestment &&
+                this.selectedConfiguration.years &&
+                this.selectedConfiguration.email
+            );
+        }
     },
 
 
@@ -37,7 +48,7 @@ const app = new Vue({
                 this.selectedConfiguration.taxes = calculateTaxes(this.selectedConfiguration.interestIncome);
                 this.selectedConfiguration.netIncome = this.selectedConfiguration.interestIncome -
                     this.selectedConfiguration.taxes;
-
+                this.calculated = true;
             }
         },
         applyForSaving: function () {
@@ -55,22 +66,27 @@ const app = new Vue({
                 this.selectedConfiguration.oneTimeInvestment = '';
                 this.selectedConfiguration.years = '';
                 this.selectedConfiguration.totalIncome = '';
-                this.selectedConfiguration.netIncome='';
-                this.selectedConfiguration.interestIncome='';
-                this.selectedConfiguration.taxes='';
-                this.selectedConfiguration.email='';
+                this.selectedConfiguration.netIncome = '';
+                this.selectedConfiguration.interestIncome = '';
+                this.selectedConfiguration.taxes = '';
+                this.selectedConfiguration.email = '';
+                this.calculated = false;
             }
 
         },
         round: function (input) {
             return Math.round(input * 100) / 100
+        },
+        format:function (number,) {
+            return number.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1 ');
+
         }
     }
 });
 
 
 function validate(selectedConfiguration) {
-    return (selectedConfiguration.fund && selectedConfiguration.oneTimeInvestment);
+    return (selectedConfiguration.fund && selectedConfiguration.oneTimeInvestment && selectedConfiguration.years);
 }
 
 function calculateFinalSaving(initialInvestment, interestRate, years) {

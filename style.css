@@ -1,0 +1,33 @@
+body{
+    background-color: #04192f;
+    color: #fff;
+}
+h1 {
+    text-align: center;
+    margin: 50px 0;
+    font-family: 'Russo One', sans-serif;
+    font-size: 4em;
+    text-shadow:2px 2px #717171
+}
+
+
+.saving-detail{
+    padding:15px;
+    background-color: #0d55a2;
+    border-radius: 5px;
+}
+
+.saving-list{
+    list-style: none;
+}
+
+.saving-list li{
+    margin-bottom:10px;
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 0.6s ease-in;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+}
