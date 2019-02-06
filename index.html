@@ -26,12 +26,12 @@
          id="yearsInput"
          v-on:change="calculate()">
   <div id="result">
-    <p>{{selectedConfiguration.result.total}}</p>
+    <p>{{selectedConfiguration.totalIncome}}</p>
     <p>{{selectedConfiguration.fund.risk}}</p>
   </div>
   <button v-on:click="applyForSaving()">Apply for saving</button>
   <ul>
-    <li v-for="appliedSaving in appliedSavings">{{appliedSaving.result}}</li>
+    <li v-for="appliedSaving in appliedSavings">{{appliedSaving}}</li>
   </ul>
 </div>
 

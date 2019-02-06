@@ -11,12 +11,10 @@ const app = new Vue({
         selectedConfiguration: {
             fund: 0,
             oneTimeInvestment: 0,
-            result: {
-                interest: '',
-                total: '',
-                taxes: '',
-                netIncome: '',
-            },
+            totalIncome: '',
+            netIncome: '',
+            interestIncome: '',
+            taxes: '',
             years: 0
         },
         appliedSavings: [],
@@ -27,37 +25,37 @@ const app = new Vue({
     methods: {
         calculate: function () {
             if (validate(this.selectedConfiguration)) {
-                this.selectedConfiguration.result.total = calculateFinalSaving(
+                this.selectedConfiguration.totalIncome = calculateFinalSaving(
                     this.selectedConfiguration.oneTimeInvestment,
                     this.selectedConfiguration.fund.interestRate,
                     this.selectedConfiguration.years
                 );
-                this.selectedConfiguration.result.interest =
-                    this.selectedConfiguration.result.total -
+                this.selectedConfiguration.interestIncome =
+                    this.selectedConfiguration.totalIncome -
                     this.selectedConfiguration.oneTimeInvestment;
-                this.selectedConfiguration.result.taxes = calculateTaxes(this.selectedConfiguration.result.interest);
-                this.selectedConfiguration.result.netIncome = this.selectedConfiguration.result.interest -
-                    this.selectedConfiguration.result.taxes;
+                this.selectedConfiguration.taxes = calculateTaxes(this.selectedConfiguration.interestIncome);
+                this.selectedConfiguration.netIncome = this.selectedConfiguration.interestIncome -
+                    this.selectedConfiguration.taxes;
 
             }
         },
         applyForSaving: function () {
             if (validate(this.selectedConfiguration)) {
-                const result = {
-                    selectedFund: selectedConfiguration.fund,
-                    years: selectedConfiguration.years,
+                const configurationToAdd = {
+                    selectedFund: this.selectedConfiguration.fund,
+                    years: this.selectedConfiguration.years,
                     oneTimeInvestment: this.selectedConfiguration.oneTimeInvestment,
-                    result: this.selectedConfiguration.result,
+                    totalIncome: this.selectedConfiguration.totalIncome,
                 };
-                this.appliedSavings.push(result);
+                this.appliedSavings.push(configurationToAdd);
 
                 this.selectedConfiguration.fund = '';
                 this.selectedConfiguration.oneTimeInvestment = '';
                 this.selectedConfiguration.years = '';
-                this.selectedConfiguration.result.netIncome='';
-                this.selectedConfiguration.result.taxes='';
-                this.selectedConfiguration.result.interest='';
-                this.selectedConfiguration.result.total='';
+                this.selectedConfiguration.totalIncome = '';
+                this.selectedConfiguration.netIncome='';
+                this.selectedConfiguration.interestIncome='';
+                this.selectedConfiguration.taxes='';
             }
 
         },
