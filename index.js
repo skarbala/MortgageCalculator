@@ -9,13 +9,14 @@ const app = new Vue({
         products: [],
         message: 'Savings calculator',
         selectedConfiguration: {
-            fund: 0,
-            oneTimeInvestment: 0,
+            fund: '',
+            oneTimeInvestment: '',
             totalIncome: '',
             netIncome: '',
             interestIncome: '',
             taxes: '',
-            years: 0
+            years: '',
+            email:''
         },
         appliedSavings: [],
 
@@ -46,6 +47,7 @@ const app = new Vue({
                     years: this.selectedConfiguration.years,
                     oneTimeInvestment: this.selectedConfiguration.oneTimeInvestment,
                     totalIncome: this.selectedConfiguration.totalIncome,
+                    email: this.selectedConfiguration.email,
                 };
                 this.appliedSavings.push(configurationToAdd);
 
@@ -56,6 +58,7 @@ const app = new Vue({
                 this.selectedConfiguration.netIncome='';
                 this.selectedConfiguration.interestIncome='';
                 this.selectedConfiguration.taxes='';
+                this.selectedConfiguration.email='';
             }
 
         },
