@@ -19,20 +19,21 @@ const app = new Vue({
             email: ''
         },
         calculated: false,
-        appliedSavings: [{
-            email: "skarbala.martin@gmail.com",
-            oneTimeInvestment: 5000,
-            selectedFund: {
-                name: "Fellowship investment group",
-                risk: "Medium"
-            },
-            totalIncome: 5304.5,
-            netIncome: 304.5,
-            years: 2,
-            taxes:50
-
-
-        }],
+        appliedSavings:[]
+        // appliedSavings: [{
+        //     email: "skarbala.martin@gmail.com",
+        //     oneTimeInvestment: 5000,
+        //     selectedFund: {
+        //         name: "Fellowship investment group",
+        //         risk: "Medium"
+        //     },
+        //     totalIncome: 5304.5,
+        //     netIncome: 304.5,
+        //     years: 2,
+        //     taxes:50
+        //
+        //
+        // }],
 
     },
     computed: {
@@ -55,9 +56,11 @@ const app = new Vue({
                     this.selectedConfiguration.fund.interestRate,
                     this.selectedConfiguration.years
                 );
+
                 this.selectedConfiguration.interestIncome =
                     this.selectedConfiguration.totalIncome -
                     this.selectedConfiguration.oneTimeInvestment;
+
                 this.selectedConfiguration.taxes = calculateTaxes(this.selectedConfiguration.interestIncome);
                 this.selectedConfiguration.netIncome = this.selectedConfiguration.interestIncome -
                     this.selectedConfiguration.taxes;
@@ -72,8 +75,10 @@ const app = new Vue({
                     oneTimeInvestment: this.selectedConfiguration.oneTimeInvestment,
                     totalIncome: this.selectedConfiguration.totalIncome,
                     email: this.selectedConfiguration.email,
+                    netIncome: this.selectedConfiguration.netIncome,
+                    taxes: this.selectedConfiguration.taxes,
                 };
-                this.appliedSavings.push(configurationToAdd);
+                this.appliedSavings.unshift(configurationToAdd);
 
                 this.selectedConfiguration.fund = '';
                 this.selectedConfiguration.oneTimeInvestment = '';

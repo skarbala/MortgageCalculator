@@ -15,25 +15,15 @@ h1 {
   text-shadow: 2px 2px #717171
 }
 
-.saving-detail {
-  padding: 25px;
-  background-color: #04476f;
-  border-radius: 5px;
-  p{
-    margin:0;
-  }
-  p.fund-description{
-    font-family: $font-secondary;
-    text-align: center;
-  }
-  p.risk{
-    font-family: $font-primary;
-    font-size: 2em;
-    text-align: center  ;
-  }
+h2{
+  margin-bottom: 20px ;
+  font-family: $font-secondary;
 }
 
+
+
 .saving-list {
+  padding:0;
   list-style: none;
   li {
     margin-bottom: 10px;
@@ -56,8 +46,39 @@ div.result {
       font-family: $font-secondary;
     }
   }
-
 }
+
+div.saving-detail {
+  padding: 25px;
+  background-color: #04476f;
+  border-radius: 5px;
+  p{
+    margin:0;
+  }
+  p.fund-description{
+    font-family: $font-secondary;
+    text-align: center;
+  }
+  p.risk{
+    font-family: $font-primary;
+    font-size: 2em;
+    text-align: center  ;
+  }
+  div.amounts{
+   span{
+     float: right;
+   }
+  }
+  transition: all 100ms ease-in;
+
+  &:hover{
+    background-color: #045a89;
+    cursor:pointer;
+  }
+}
+
+
+
 
 .fade-enter-active, .fade-leave-active {
   transition: opacity 0.6s ease-in;

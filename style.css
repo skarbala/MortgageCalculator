@@ -11,25 +11,13 @@ h1 {
   text-shadow: 2px 2px #717171;
 }
 
-.saving-detail {
-  padding: 25px;
-  background-color: #04476f;
-  border-radius: 5px;
-}
-.saving-detail p {
-  margin: 0;
-}
-.saving-detail p.fund-description {
+h2 {
+  margin-bottom: 20px;
   font-family: "Exo", sans-serif;
-  text-align: center;
-}
-.saving-detail p.risk {
-  font-family: "Russo One", sans-serif;
-  font-size: 2em;
-  text-align: center;
 }
 
 .saving-list {
+  padding: 0;
   list-style: none;
 }
 .saving-list li {
@@ -51,6 +39,32 @@ div.result div p {
 }
 div.result div span {
   font-family: "Exo", sans-serif;
+}
+
+div.saving-detail {
+  padding: 25px;
+  background-color: #04476f;
+  border-radius: 5px;
+  transition: all 100ms ease-in;
+}
+div.saving-detail p {
+  margin: 0;
+}
+div.saving-detail p.fund-description {
+  font-family: "Exo", sans-serif;
+  text-align: center;
+}
+div.saving-detail p.risk {
+  font-family: "Russo One", sans-serif;
+  font-size: 2em;
+  text-align: center;
+}
+div.saving-detail div.amounts span {
+  float: right;
+}
+div.saving-detail:hover {
+  background-color: #045a89;
+  cursor: pointer;
 }
 
 .fade-enter-active, .fade-leave-active {
