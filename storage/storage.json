@@ -14,13 +14,13 @@
   {
     "id": 2,
     "name": "Fellowship investment group",
-    "risk": "Very High",
+    "risk": "High",
     "interestRate": 15
   },
   {
     "id": 4,
     "name": "McDuck's safe",
-    "risk": "Very Low",
+    "risk": "Low",
     "interestRate": 0
   }
 ]

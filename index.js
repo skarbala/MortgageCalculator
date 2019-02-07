@@ -19,7 +19,20 @@ const app = new Vue({
             email: ''
         },
         calculated: false,
-        appliedSavings: [],
+        appliedSavings: [{
+            email: "skarbala.martin@gmail.com",
+            oneTimeInvestment: 5000,
+            selectedFund: {
+                name: "Fellowship investment group",
+                risk: "Medium"
+            },
+            totalIncome: 5304.5,
+            netIncome: 304.5,
+            years: 2,
+            taxes:50
+
+
+        }],
 
     },
     computed: {
@@ -77,7 +90,7 @@ const app = new Vue({
         round: function (input) {
             return Math.round(input * 100) / 100
         },
-        format:function (number,) {
+        format: function (number,) {
             return number.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1 ');
 
         }

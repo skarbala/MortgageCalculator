@@ -1,0 +1,69 @@
+$font-primary: 'Russo One', sans-serif;
+$font-secondary:'Exo', sans-serif;
+
+
+body {
+  background-color: #04192f;
+  color: #fff;
+}
+
+h1 {
+  text-align: center;
+  margin: 50px 0;
+  font-family: $font-primary;
+  font-size: 4.1em;
+  text-shadow: 2px 2px #717171
+}
+
+.saving-detail {
+  padding: 25px;
+  background-color: #04476f;
+  border-radius: 5px;
+  p{
+    margin:0;
+  }
+  p.fund-description{
+    font-family: $font-secondary;
+    text-align: center;
+  }
+  p.risk{
+    font-family: $font-primary;
+    font-size: 2em;
+    text-align: center  ;
+  }
+}
+
+.saving-list {
+  list-style: none;
+  li {
+    margin-bottom: 10px;
+  }
+}
+
+div.result {
+  margin-top: 20px;
+  text-align: center;
+
+  div{
+    margin: 20px 0;
+    p {
+      font-family: $font-primary;
+      text-shadow: 2px 2px #717171;
+      margin: 0;
+      font-size: 2em;
+    }
+    span{
+      font-family: $font-secondary;
+    }
+  }
+
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.6s ease-in;
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+{
+  opacity: 0;
+}

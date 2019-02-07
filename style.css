@@ -1,33 +1,64 @@
-body{
-    background-color: #04192f;
-    color: #fff;
+body {
+  background-color: #04192f;
+  color: #fff;
 }
+
 h1 {
-    text-align: center;
-    margin: 50px 0;
-    font-family: 'Russo One', sans-serif;
-    font-size: 4em;
-    text-shadow:2px 2px #717171
+  text-align: center;
+  margin: 50px 0;
+  font-family: "Russo One", sans-serif;
+  font-size: 4.1em;
+  text-shadow: 2px 2px #717171;
 }
 
-
-.saving-detail{
-    padding:15px;
-    background-color: #0d55a2;
-    border-radius: 5px;
+.saving-detail {
+  padding: 25px;
+  background-color: #04476f;
+  border-radius: 5px;
+}
+.saving-detail p {
+  margin: 0;
+}
+.saving-detail p.fund-description {
+  font-family: "Exo", sans-serif;
+  text-align: center;
+}
+.saving-detail p.risk {
+  font-family: "Russo One", sans-serif;
+  font-size: 2em;
+  text-align: center;
 }
 
-.saving-list{
-    list-style: none;
+.saving-list {
+  list-style: none;
+}
+.saving-list li {
+  margin-bottom: 10px;
 }
 
-.saving-list li{
-    margin-bottom:10px;
+div.result {
+  margin-top: 20px;
+  text-align: center;
+}
+div.result div {
+  margin: 20px 0;
+}
+div.result div p {
+  font-family: "Russo One", sans-serif;
+  text-shadow: 2px 2px #717171;
+  margin: 0;
+  font-size: 2em;
+}
+div.result div span {
+  font-family: "Exo", sans-serif;
 }
 
 .fade-enter-active, .fade-leave-active {
-    transition: opacity 0.6s ease-in;
+  transition: opacity 0.6s ease-in;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-    opacity: 0;
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
 }
+
+/*# sourceMappingURL=style.css.map */
