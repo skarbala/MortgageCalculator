@@ -22,6 +22,24 @@
     "name": "McDuck's safe",
     "risk": "Low",
     "interestRate": 0
+  },
+  {
+    "id": 5,
+    "name": "Batman's Cave Development",
+    "risk": "Medium",
+    "interestRate": 8
+  },
+  {
+    "id": 6,
+    "name": "Death Star real estate",
+    "risk": "High",
+    "interestRate": 20
+  },
+  {
+    "id": 7,
+    "name": "Tom & Jerry corp",
+    "risk": "Low",
+    "interestRate": 4
   }
 ]
 
