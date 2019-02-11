@@ -19,7 +19,7 @@
         <div class="col">
           <p>Investment<span>{{format(selectedSaving.oneTimeInvestment)}} kr</span></p>
           <p>Interest income<span>{{format(selectedSaving.interestIncome)}} kr</span></p>
-          <p>Taxes<span>{{format(selectedSaving.taxes)}}</span></p>
+          <p>Taxes<span>{{format(selectedSaving.taxes)}} kr</span></p>
         </div>
         <div class="col">
           <p>Fund<span>{{selectedSaving.selectedFund.name}}</span></p>
@@ -80,7 +80,7 @@
                v-on:change="calculate()">
       </div>
 
-      <div class="input-group mb-3">
+      <div :class="['input-group mb-3', isEmailValid]">
         <input class="form-control"
                type="email"
                placeholder="Email address"
@@ -113,22 +113,27 @@
     <div class="col">
       <h2>Recent requests</h2>
 
-      <transition-group name="fade" tag="ul" class="saving-list">
+      <transition-group name="bounce" tag="ul" class="saving-list">
         <li v-for="appliedSaving in appliedSavings"
-            v-bind:key="appliedSaving.email"
-            v-on:click="openDetail(appliedSaving)">
+            v-bind:key="appliedSaving.email">
           <div class="saving-detail">
             <div class="row">
               <div class="col amounts">
                 <p>Total income<span>{{format(appliedSaving.totalIncome)}} kr</span></p>
                 <p>Net income <span>{{format(appliedSaving.netIncome)}} kr</span></p>
                 <p>Taxes <span>{{format(appliedSaving.taxes)}} kr</span></p>
+                <div class="buttons">
+                  <button v-on:click="openDetail(appliedSaving)" class="saving-detail">detail</button>
+                  <button v-on:click="removeSaving(appliedSaving)" class="remove-saving">remove</button>
+                </div>
               </div>
               <div class="col">
                 <p class="fund-description">{{appliedSaving.selectedFund.name}}</p>
                 <p class="risk">{{appliedSaving.selectedFund.risk}}</p>
+
               </div>
             </div>
+
           </div>
         </li>
       </transition-group>

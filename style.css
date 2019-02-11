@@ -41,11 +41,16 @@ div.result div span {
   font-family: "Exo", sans-serif;
 }
 
+.error input {
+  background-color: #9a0000;
+  color: #fff;
+}
+
 div.saving-detail {
   padding: 25px;
   background-color: #04476f;
   border-radius: 5px;
-  transition: all 100ms ease-in;
+  transition: all 200ms ease-in;
 }
 div.saving-detail p {
   margin: 0;
@@ -62,13 +67,56 @@ div.saving-detail p.risk {
 div.saving-detail div.amounts span {
   float: right;
 }
+div.saving-detail div.buttons {
+  text-align: left;
+  margin-top: 20px;
+}
+div.saving-detail div.buttons button {
+  padding: 0;
+  margin-right: 10px;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  font-size: 1.2em;
+  font-family: "Exo", sans-serif;
+  cursor: pointer;
+  transition: all 200ms ease-in;
+}
+div.saving-detail div.buttons button:focus, div.saving-detail div.buttons button:active {
+  outline: none;
+}
+div.saving-detail div.buttons button:active {
+  transform: translate(-2, -2);
+}
+div.saving-detail div.buttons button:hover {
+  color: #04192f;
+}
 div.saving-detail:hover {
-  background-color: #045a89;
+  background-color: #04669c;
   cursor: pointer;
 }
 
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.bounce-enter-active {
+  animation: bounce-in 0.5s;
+}
+
+.bounce-leave-active {
+  animation: bounce-in 0.5s reverse;
+}
+
 .fade-enter-active, .fade-leave-active {
-  transition: opacity 0.6s ease-in;
+  transition: opacity 0.3s ease-in;
 }
 
 .fade-enter, .fade-leave-to {

@@ -25,21 +25,17 @@ const app = new Vue({
         appliedSavings: [],
         selectedSaving: '',
         showModal: false,
-        // appliedSavings: [{
-        //     email: "skarbala.martin@gmail.com",
-        //     oneTimeInvestment: 5000,
-        //     selectedFund: {
-        //         name: "Fellowship investment group",
-        //         risk: "Medium"
-        //     },
-        //     totalIncome: 5304.5,
-        //     netIncome: 304.5,
-        //     years: 2,
-        //     taxes:50
-        //
-        //
-        // }],
+        reg: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/
 
+    },
+    mounted: function () {
+        if (localStorage.getItem('appliedSavings')) {
+            try {
+                this.appliedSavings = JSON.parse(localStorage.getItem('appliedSavings'));
+            } catch (e) {
+                localStorage.removeItem('appliedSavings');
+            }
+        }
     },
     computed: {
         savingButtonDisabled: function () {
@@ -47,15 +43,18 @@ const app = new Vue({
                 this.newSaving.fund &&
                 this.newSaving.oneTimeInvestment &&
                 this.newSaving.years &&
-                this.newSaving.email
+                this.isEmailValid ==='success'
             );
+        },
+        isEmailValid: function() {
+            return (this.newSaving.email == "")? "" : (this.reg.test(this.newSaving.email)) ? 'success' : 'error';
         }
     },
 
 
     methods: {
         calculate: function () {
-            if (validate(this.newSaving)) {
+            if (validate(this.newSaving) ) {
                 this.newSaving.totalIncome = calculateFinalSaving(
                     this.newSaving.oneTimeInvestment,
                     this.newSaving.fund.interestRate,
@@ -95,6 +94,7 @@ const app = new Vue({
                 this.newSaving.taxes = '';
                 this.newSaving.email = '';
                 this.calculated = false;
+                this.saveAppliedSavings();
             }
 
         },
@@ -108,7 +108,16 @@ const app = new Vue({
         openDetail: function (saving) {
             this.selectedSaving = saving;
             this.showModal = true;
-        }
+        },
+        saveAppliedSavings() {
+            const parsed = JSON.stringify(this.appliedSavings);
+            localStorage.setItem('appliedSavings', parsed);
+        },
+        removeSaving(appliedSaving) {
+            const index = this.appliedSavings.indexOf(appliedSaving);
+            this.$delete(this.appliedSavings, index);
+            this.saveAppliedSavings();
+        },
     }
 });
 
