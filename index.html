@@ -61,13 +61,13 @@
 
       <div class="input-group mb-3">
         <input
-          class="form-control"
-          type="number"
-          placeholder="One time investment"
-          v-model="newSaving.oneTimeInvestment"
-          step="1000"
-          id="oneTimeInvestmentInput"
-          v-on:change="calculate()">
+                class="form-control"
+                type="number"
+                placeholder="One time investment"
+                v-model="newSaving.oneTimeInvestment"
+                step="1000"
+                id="oneTimeInvestmentInput"
+                v-on:change="calculate()">
       </div>
 
       <div class="input-group mb-3">
@@ -111,8 +111,8 @@
     </div>
 
     <div class="col">
-      <h2>Recent requests</h2>
-
+      <h2 class="recent-requests-header">Recent requests
+        <span v-if="appliedSavings.length>0">{{appliedSavings.length}}</span></h2>
       <transition-group name="bounce" tag="ul" class="saving-list">
         <li v-for="appliedSaving in appliedSavings"
             v-bind:key="appliedSaving.email">

@@ -44,6 +44,7 @@ div.result {
     }
   }
 }
+
 .error {
   input {
     background-color: #9a0000;
@@ -220,5 +221,20 @@ div.saving-detail {
     border: none;
     box-shadow: none;
   }
-
 }
+
+.no-results {
+  text-align: center;
+  margin-top: 100px;
+  h3 {
+    font-family: $font-primary;
+  }
+}
+
+.recent-requests-header{
+  span{
+    float:right;
+  }
+}
+
+

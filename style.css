@@ -209,4 +209,16 @@ div.saving-detail:hover {
   box-shadow: none;
 }
 
+.no-results {
+  text-align: center;
+  margin-top: 100px;
+}
+.no-results h3 {
+  font-family: "Russo One", sans-serif;
+}
+
+.recent-requests-header span {
+  float: right;
+}
+
 /*# sourceMappingURL=style.css.map */
