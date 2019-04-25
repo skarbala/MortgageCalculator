@@ -1,0 +1,295 @@
+@font-face {
+  font-family: "Rage";
+  src: url("../fonts/rage italic.ttf");
+}
+body {
+  background-color: black;
+}
+
+select.form-control {
+  color: #fff;
+  background: black;
+  border: none;
+  border-bottom: 2px solid #F05CF2;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+select.form-control:focus {
+  background: black;
+  border: none;
+  border-bottom: 2px solid #F05CF2;
+  border-radius: 0;
+  box-shadow: none;
+  color: #fff !important;
+}
+
+button.btn {
+  background-color: #973a99;
+  color: black;
+  border-radius: 0;
+}
+
+button.btn-success {
+  background-color: #F05CF2;
+  color: black;
+  border: none;
+}
+button.btn-success:hover {
+  background-color: #F05CF2;
+}
+
+input.form-control {
+  background-color: black;
+  border: none;
+  border-bottom: 2px solid #F05CF2;
+  border-radius: 0;
+  color: #fff;
+}
+input.form-control:focus {
+  background-color: black;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  border-bottom: 2px solid #F05CF2;
+  color: #fff;
+}
+input.form-control::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #e9e9e9;
+  opacity: 1;
+  /* Firefox */
+}
+
+h1 {
+  color: black;
+  text-align: center;
+  margin: 50px 0;
+  font-family: "Rage", sans-serif;
+  font-size: 9em;
+  text-shadow: -2px -2px 0 #F05CF2, 2px -2px 0 #F05CF2, -2px 2px 0 #F05CF2, 2px 2px 0 #F05CF2;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-family: "Rage", sans-serif;
+  color: #fff;
+  font-size: 3em;
+}
+
+.saving-list {
+  padding: 0;
+  list-style: none;
+}
+.saving-list li {
+  margin-bottom: 10px;
+}
+
+div.result {
+  margin-top: 20px;
+  text-align: center;
+}
+div.result div {
+  margin: 20px 0;
+}
+div.result div p {
+  font-family: "Exo", sans-serif;
+  color: #fff;
+  margin: 0;
+  font-size: 2.3em;
+}
+div.result div span {
+  font-size: 2.2em;
+  color: #F05CF2;
+  font-family: "Rage", sans-serif;
+}
+
+.error input {
+  background-color: #9a0000;
+  color: #fff;
+}
+
+div.saving-detail {
+  padding: 25px;
+  border-radius: 2px;
+  background-color: #2d2d2d;
+  transition: all 200ms ease-in;
+}
+div.saving-detail p {
+  color: #fff;
+  margin: 0;
+}
+div.saving-detail p.fund-description {
+  font-family: "Exo", sans-serif;
+  text-align: center;
+}
+div.saving-detail p.risk {
+  font-family: "Rage", sans-serif;
+  font-size: 3em;
+  text-align: center;
+  color: #F05CF2;
+}
+div.saving-detail div.amounts span {
+  float: right;
+}
+div.saving-detail div.buttons {
+  text-align: left;
+  margin-top: 20px;
+}
+div.saving-detail div.buttons button {
+  padding: 0;
+  margin-right: 10px;
+  border: none;
+  background-color: transparent;
+  font-size: 1.2em;
+  font-family: "Exo", sans-serif;
+  cursor: pointer;
+  font-weight: 700;
+  color: #973a99;
+  transition: all 200ms ease-in;
+}
+div.saving-detail div.buttons button:focus, div.saving-detail div.buttons button:active {
+  outline: none;
+}
+div.saving-detail div.buttons button:active {
+  transform: translate(-2, -2);
+}
+div.saving-detail div.buttons button:hover {
+  color: #F05CF2;
+}
+div.saving-detail:hover {
+  cursor: pointer;
+  background-color: #383838;
+  transform: scale(1.02);
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.bounce-enter-active {
+  animation: bounce-in 0.5s;
+}
+
+.bounce-leave-active {
+  animation: bounce-in 0.5s reverse;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.3s ease-in;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: table;
+  transition: opacity 0.3s ease;
+}
+
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.modal-container {
+  text-align: center;
+  width: 900px;
+  margin: 0 auto;
+  padding: 20px 30px;
+  background-color: #2d2d2d;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+  transition: all 0.2s ease-in-out;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.modal-header h2 {
+  margin: 0 auto;
+  color: #F05CF2;
+  font-size: 5em;
+  font-family: "Rage", sans-serif;
+}
+
+.modal-body {
+  margin: 20px 0;
+  color: white;
+}
+.modal-body p {
+  font-size: 1.2em;
+  font-family: "Exo", sans-serif;
+  text-align: left;
+}
+.modal-body span {
+  font-family: "Exo", sans-serif;
+  float: right;
+}
+.modal-body hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #fff;
+  margin: 1em 0;
+  padding: 0;
+}
+.modal-body .modal-result p {
+  font-size: 1.5em;
+}
+.modal-body .modal-result span {
+  color: #F05CF2;
+  font-weight: 700;
+}
+
+.modal-enter {
+  opacity: 0;
+}
+
+.modal-leave-active {
+  opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+  -webkit-transform: scale(1.5);
+  transform: scale(1.5);
+}
+
+.modal-default-button.btn {
+  font-family: "Rage", sans-serif;
+  font-size: 4em;
+  color: #F05CF2;
+  background-color: transparent;
+}
+.modal-default-button.btn:active, .modal-default-button.btn:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.no-results {
+  text-align: center;
+  margin-top: 100px;
+}
+.no-results h3 {
+  font-family: "Rage", sans-serif;
+}
+
+.recent-requests-header span {
+  float: right;
+}
+
+/*# sourceMappingURL=retro-style.css.map */
